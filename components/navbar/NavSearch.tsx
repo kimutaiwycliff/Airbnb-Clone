@@ -4,7 +4,7 @@ const NavSearch = () => {
   return (
     <Input
       type='search'
-      placeholder='find a property...'
+      placeholder='Find a property...'
       className='max-w-xs dark:bg-muted '
     />
   )
