@@ -38,9 +38,7 @@ export const createProfileAction = async (
       },
     });
   } catch (error) {
-    return {
-      message: error instanceof Error ? error.message : 'An error occurred',
-    };
+    return renderError(error);
   }
   redirect('/');
 };
@@ -91,8 +89,13 @@ export const updateProfileAction = async (
     revalidatePath('/profile');
     return { message: 'Profile updated successfully' };
   } catch (error) {
-    return {
-      message: error instanceof Error ? error.message : 'An error occurred',
-    };
+    return renderError(error);
   }
+};
+
+const renderError = (error: unknown): { message: string } => {
+  console.log(error);
+  return {
+    message: error instanceof Error ? error.message : 'An error occurred',
+  };
 };
