@@ -1,6 +1,21 @@
-const HomePage = () => {
+import CategoriesList from '@/components/home/CategoriesList';
+import PropertiesContainer from '@/components/home/PropertiesContainer';
+const HomePage = ({
+  searchParams,
+}: {
+  searchParams: { category?: string; search?: string };
+}) => {
   return (
-    <div className="text-3xl">HomePage</div>
-  )
+    <section>
+      <CategoriesList
+        category={searchParams?.category}
+        search={searchParams?.search}
+      />
+      <PropertiesContainer
+        category={searchParams?.category}
+        search={searchParams?.search}
+      />
+    </section>
+  );
 }
 export default HomePage
