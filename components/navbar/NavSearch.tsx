@@ -20,7 +20,7 @@ const NavSearch = () => {
       params.delete('search');
     }
     replace(`${pathname}?${params.toString()}`);
-  }, 300);
+  }, 100);
   useEffect(() => {
     if (!searchParams.get('search')) {
       setSearch('');
