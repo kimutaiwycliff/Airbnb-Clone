@@ -25,5 +25,5 @@ Make sure you have the following installed:
 ### Steps to Install
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/airbnb-clone.git
+   git clone https://github.com/wycliffkimutai/airbnb-clone.git
    cd airbnb-clone
