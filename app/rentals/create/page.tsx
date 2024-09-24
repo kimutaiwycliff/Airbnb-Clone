@@ -5,36 +5,45 @@ import { SubmitButton } from '@/components/form/Buttons';
 import PriceInput from '@/components/form/PriceInput';
 import CategoriesInput from '@/components/form/CategoriesInput';
 import TextAreaInput from '@/components/form/TextAreaInput';
+import CountriesInput from '@/components/form/CountriesInput';
+import ImageInput from '@/components/form/ImageInput';
 const CreatePropertyPage = () => {
   return (
     <section>
-      <h1 className='text-2xl font-semibold mb-8 capitalize'>
+      <h1 className="text-2xl font-semibold mb-8 capitalize">
         create property
       </h1>
-      <div className='border p-8 rounded-md'>
-        <h3 className='text-lg mb-4 font-medium'>General Info</h3>
+      <div className="border p-8 rounded-md">
+        <h3 className="text-lg mb-4 font-medium">General Info</h3>
         <FormContainer action={createPropertyAction}>
-          <div className='grid md:grid-cols-2 gap-8 mb-4'>
+          <div className="grid md:grid-cols-2 gap-8 mb-4">
             <FormInput
-              name='name'
-              type='text'
-              label='Name (20 limit)'
-              defaultValue='Cabin in Latvia'
+              name="name"
+              type="text"
+              label="Name (20 limit)"
+              defaultValue="Cabin in Latvia"
             />
             <FormInput
-              name='tagline'
-              type='text '
-              label='Tagline (30 limit)'
-              defaultValue='Dream Getaway Awaits You Here!'
+              name="tagline"
+              type="text "
+              label="Tagline (30 limit)"
+              defaultValue="Dream Getaway Awaits You Here!"
             />
             <PriceInput />
             <CategoriesInput />
           </div>
-          <TextAreaInput name='description' labelText='Description (10 - 1000 Words)' />
-          <SubmitButton text='create rental' className='mt-12' />
+          <TextAreaInput
+            name="description"
+            labelText="Description (10 - 1000 Words)"
+          />
+          <div className="grid sm:grid-cols-2 gap-8 mt-4">
+            <CountriesInput />
+            <ImageInput />
+          </div>
+          <SubmitButton text="create rental" className="mt-12" />
         </FormContainer>
       </div>
     </section>
   );
-}
-export default CreatePropertyPage
+};
+export default CreatePropertyPage;
