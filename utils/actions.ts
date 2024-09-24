@@ -181,6 +181,7 @@ export const fetchProperties = async ({
   return properties;
 };
 
+// FAVORITE ACTIONS
 export const fetchFavoriteId = async ({
   propertyId,
 }: {
