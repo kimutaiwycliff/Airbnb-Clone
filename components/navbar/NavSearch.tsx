@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 
 const NavSearch = () => {
   const searchParams = useSearchParams();
+  const specificSearchParams = searchParams.get('search')
 
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -25,7 +26,7 @@ const NavSearch = () => {
     if (!searchParams.get('search')) {
       setSearch('');
     }
-  }, [searchParams.get('search')]);
+  }, [specificSearchParams]);
   return (
     <Input
       type='search'
